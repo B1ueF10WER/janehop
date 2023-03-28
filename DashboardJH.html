@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="DashboardJH.css" />
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="star-outline"></ion-icon></span>
+                        <span class="title">Jane Hopkins</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                        <span class="title">Patients</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="chatbubble-ellipses-outline"></ion-icon></span>
+                        <span class="title">Message</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="help-circle-outline"></ion-icon></span>
+                        <span class="title">Help</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                        <span class="title">Settings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                        <span class="title">Password</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- main -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                <!--search-->
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search">
+                        <ion-icon name="search-circle-outline"></ion-icon>
+                    </label>
+                </div>
+                <!--user Image -->
+                <div class="user">
+                    <img src="user.png">
+                </div>
+            </div>
+
+
+            <!--detailed list-->
+
+            <div class="details">
+                <div class="Patients">
+                    <div class="cardHeader">
+                        <h2>Patients</h2>
+                        <a href="#" class="btn">View All</a>
+                        <a href="#" id="openModal" class="btn-modal">Assign a Patient</a>
+                        <!--<button id="openModal">Add a Patient</button>-->
+                            <div id="myModal" class="modal">
+                                <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <h2>Enter New Patient Information</h2>
+                                    <form>
+                                        <label for="fname">First Name:</label><br>
+                                            <input 
+                                                type="text" 
+                                                id="fname" 
+                                                name="fname"><br><br>
+                                        <label for="lname">Last Name:</label><br>
+                                            <input 
+                                                type="text" 
+                                                id="lname" 
+                                                name="lname"><br><br>
+                                        <label for="email">Email:</label><br>
+                                            <input 
+                                                type="email" 
+                                                id="email" 
+                                                name="email"><br><br>
+                                        <label for="Appointment">Appointment:</label><br>
+                                            <input 
+                                                type="date" 
+                                                id="Appointment" 
+                                                name="Appointment"><br><br>
+                                        <label for="assigned">Assigned:</label>
+                                        <button id="pending-button" class="pending">Select</button>
+                                            <ul id="myList">
+                                                <li>Pending</li><br>
+                                                <li>Assigned</li><br>
+                                                <li>No way Jose</li><br><br>
+                                        <label for="type">Type:</label><br>
+                                            <input 
+                                                type="text" 
+                                                id="type" 
+                                                name="type"><br><br>
+                                    <button type="submit">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                    </div>
+                    <!--<table>
+                        <thead>
+                            <tr>
+                                <td>ID</td>
+                                <td>Last Name</td>
+                                <td>First Name</td>
+                                <td>Date of Birth</td>
+                                <td>Age</td>
+                                <td>Last Appointment</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>992348</td>
+                                <td>Gonzalez</td>
+                                <td>Arturo</td>
+                                <td>5/4/60</td>
+                                <td>62</td>
+                                <td>2/22/23</td>
+                            </tr>
+                            <tr>
+                                <td>995485</td>
+                                <td>Lopez</td>
+                                <td>Alfredo</td>
+                                <td>4/24/65</td>
+                                <td>57</td>
+                                <td>2/22/23</td>
+                            </tr>
+                            <tr>
+                                <td>985575</td>
+                                <td>Saldana</td>
+                                <td>Marie</td>
+                                <td>9/24/65</td>
+                                <td>57</td>
+                                <td>2/22/23</td>
+                            </tr>
+                            <tr>
+                                <td>972695</td>
+                                <td>Saldana</td>
+                                <td>Jorge</td>
+                                <td>1/24/70</td>
+                                <td>53</td>
+                                <td>2/22/23</td>
+                            </tr>
+                            <tr>
+                                <td>998684</td>
+                                <td>Valenzuela</td>
+                                <td>Jorge</td>
+                                <td>1/24/78</td>
+                                <td>45</td>
+                                <td>2/22/23</td>
+                            </tr>
+                            <tr>
+                                <td>954571</td>
+                                <td>Garcia</td>
+                                <td>Clara</td>
+                                <td>12/24/73</td>
+                                <td>49</td>
+                                <td>2/22/23</td>
+                            </tr>
+                            <tr>
+                                <td>954571</td>
+                                <td>Rodriguez</td>
+                                <td>Santiago</td>
+                                <td>10/31/78</td>
+                                <td>44</td>
+                                <td>2/22/23</td>
+                            </tr>
+                            <tr>
+                                <td>943462</td>
+                                <td>Hernandez</td>
+                                <td>Cristiano</td>
+                                <td>3/24/60</td>
+                                <td>62</td>
+                                <td>2/22/23</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    -->
+                    <table id="patientTable">
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                                <th>Appointment</th>
+                                <th>Assigned</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="DashboardJH.js"></script>
+</body>
+</html>
